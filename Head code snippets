@@ -1,0 +1,1135 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+    .author__is-admin {
+        display: none !important;
+    }
+    body {
+        background: #222831 !important;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body.sessions {
+        background: #222831;
+    }
+
+    .header {
+        background: #222831 !important;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #222831;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #393e46;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #fff;
+    }
+
+    @media (min-width: 1100px) {
+        .community__brand .community__logo img {
+            max-width: 118px;
+            width: 118px;
+            height: auto;
+        }
+
+        .is-signed-in .standard-layout .form-wrapper .form-content {
+            padding: 15px;
+        }
+
+        .community__logo{
+            margin-left: -43px;
+        }
+    }
+
+    .form-section__background,
+    .view-post .post__reply.reply-to-parent {
+        background: #393e46;
+    }
+
+    .action__label:hover,
+    .standard-layout .form-wrapper .form-content .form-group .form-input {
+        color: #fff;
+    }
+
+    .switcher__mobile .community__logo span.community__name {
+        color: #fff;
+    }
+
+    .sidebar__block .block-content>.nav-link .space__name:hover {
+        color: #00adb5 !important;
+    }
+
+    /* Hide member tab on spaces */
+    .view-space .header__nav .nav-link+.nav-link {
+        display: none;
+    }
+
+    a:hover .icon use {
+        color: #00adb5 !important;
+    }
+
+    .sidebar__block:nth-child(2) .space-group__collapse,
+    .sidebar__block:nth-child(3) .space-group__collapse,
+    .sidebar__block:nth-child(4) .space-group__collapse {
+        display: none;
+    }
+
+    .bg-white {
+        background: #222831 !important;
+    }
+
+    .bottom-bar__add-post {
+        display: none;
+    }
+
+    .search-input-wrapper .icon use {
+        fill: #fff !important;
+    }
+
+    .header .header__search .header__search--desktop form input {
+        background: #222831;
+        margin-left: 0;
+        cursor: pointer;
+        width: 20px;
+        transition: .2s;
+        padding: 0 20px 0 24px;
+        color: #fff;
+        border: none;
+    }
+
+    .header__search form input {
+        background: #222831;
+        color: #fff;
+    }
+
+    .header .header__search form input.active {
+        cursor: text;
+        padding: 0 20px 0 42px;
+        width: 100%;
+    }
+
+    .user-menu .dropdown-menu__header,
+    .dropdown-menu__footer,
+    .header__search .search-results--desktop {
+        background: #393e46;
+    }
+
+    .dropdown-menu__header a,
+    .dropdown-menu__footer a,
+    .header__search .search-results--desktop a {
+        color: #fff !important;
+    }
+
+    .modal__header {
+        background: #222831;
+    }
+
+    .modal__body {
+        border-top: 0;
+        background: #393e46;
+    }
+
+    .post--feed,
+    .welcome-banner,
+    .main__header--sticky,
+    .main__header,
+    .member-card__insid>a,
+    .view-homepage .sidebar--right .sidebar__block,
+    .header,
+    .dropdown-menu.animate-right,
+    .chat-room__grid,
+    .form-content,
+    .analytics__box,
+    .dropdown-menu__inside,
+    .browser-notification,
+    .profile-comment__content {
+        box-shadow: 1px 1px 20px 10px #00000033 !important;
+    }
+
+    .post--parent {
+        box-shadow: 1px 15px 14px 10px #00000033 !important;
+    }
+
+    label {
+        color: #fff;
+    }
+
+    .sidebar .block--member-nav a,
+    .sidebar .block--member-nav a:hover {
+        color: #fff;
+    }
+
+    .trending-post-link div {
+        color: #fff;
+    }
+
+    .sidebar .block--member-nav a use {
+        stroke: #fff;
+    }
+
+    .standard-layout .main__header .header__nav .nav-link.selected {
+        color: #00adb5 !important;
+    }
+
+    div {
+        box-shadow: none !important;
+    }
+
+    .standard-layout .main__header .header__nav,
+    .post__actions,
+    .post__post {
+        border-top: none !important;
+    }
+
+    .form-control,
+    .form-control:focus,
+    .standard-layout .form-wrapper .form-content .btn:not(.btn-post-reply),
+    .standard-layout .form-wrapper .form-content .form-group.full-width trix-editor,
+    .trix-v2 .react-trix-editor-container .trix-editor-textbox,
+    .trix-v2 .react-trix-editor-container .toolbar,
+    .trix-v2 .post__reply .react-trix-editor-container .trix-editor-textbox,
+    .analytics__box .flatpickr:not(.flatpickr-month-select),
+    .analytics__box .box__timeframe input,
+    .chat-room__text-editor .message-text-box,
+    .trix-v1 trix-toolbar .trix-dialog__link-fields .trix-input,
+    .quickpost-modal .modal__body .form-section__title-input input,
+    .ss-main .ss-single-selected,
+    .quickpost-modal__form-settings .form-content .form-group .form-input input {
+        background: #393e46;
+        color: #fff;
+        border: 1px solid #ffffff73;
+    }
+
+    select {
+        background: #222831 !important;
+        color: #fff !important;
+        border: 1px solid #ffffff73 !important;
+    }
+
+    .header,
+    .dropdown-menu__inside {
+        background: #393e46;
+        border-bottom: 0;
+    }
+
+    .header-comunity-link {
+        color: #ffffffd3;
+        font-size: 15px;
+        font-weight: 500;
+        display: inline-block;
+        margin-left: 16px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .header-comunity-link:hover {
+        color: #00adb5;
+    }
+
+    .header-comunity-link.first {
+        margin-left: 35px;
+    }
+
+    .custom_dropdown {
+        padding: 10px 15px;
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 260px;
+        min-height: 300px;
+        background-color: #222831;
+        color: #fff;
+        display: none;
+        border: 1px solid rgba(225, 225, 225, .2);
+        border-radius: 6px;
+        z-index: 9999;
+    }
+
+
+    .custom_dropdown.active {
+        display: block;
+    }
+
+    .custom_dropdown .block {
+        padding: 5px 8px;
+        background: #222831;
+        margin-bottom: 14px;
+        color: #fff;
+    }
+
+    .custom_dropdown .block:hover {
+        background: #000;
+    }
+
+    .custom_dropdown .dropdown_h2 {
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .custom_dropdown .dropdown_p {
+        color: #868a8d;
+        margin-top: 0;
+        font-size: 15px;
+    }
+
+    .standard-layout .main__header .header__nav,
+    .post__actions {
+        border-top: 1px solid #ffffff73;
+    }
+
+    a:hover,
+    .trix-v2 .trix-content *{
+        color: #fff;
+    }
+
+
+    .space-card--add-space:hover,
+    .user-search__label {
+        color: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .price-plan-text,
+    .block-header>a[href],
+    .main__header .header__name h1,
+    .standard-layout .main__header .header__nav .nav-link,
+    .post__bio .author__name a,
+    .settings-table__cell,
+    .post--card__content h2 a {
+        color: #fff !important;
+    }
+
+    .has-community-switcher .header,
+    .space-group__spaces {
+        background: #222831;
+        border-bottom: 0;
+    }
+
+    .member-card--add-member:hover {
+        color: #fff;
+    }
+
+    .dropdown-menu__with-description {
+        color: #fff;
+        background: #222831;
+        ;
+    }
+
+    .dropdown-menu__with-description a {
+        color: #fff;
+    }
+
+    .dropdown-menu.dropdown-menu--actions .dropdown-menu__with-description ul li a:hover {
+        background: #393e46;
+    }
+
+    .post__actions a,
+    .sidebar__block .block-content>.nav-link {
+        color: #ffffffd3;
+    }
+
+    .sidebar__block .block-content>.nav-link:hover {
+        color: #fff;
+    }
+
+    .post__actions a:hover {
+        color: #fff;
+    }
+
+    .post__actions a:hover svg,
+    .main__header .header__name h1 .icon use {
+        fill: #fff !important;
+    }
+
+    .post__actions a svg {
+        fill: #ffffffd3 !important;
+    }
+
+    .current-plan-name {
+        color: #fff !important;
+    }
+
+    .post__comments {
+        background: #393e46;
+    }
+
+    .post__header {
+        background: #393e46;
+    }
+
+    .post__post {
+        background: #222831;
+        border-top: 1px solid #ffffff73;
+    }
+
+    .post__header h2 a {
+        color: #fff;
+    }
+
+    .post--card.has-engagement {
+        background: #393e46;
+    }
+
+    .is-standard-layout .community__content,
+    .profile-comment__content,
+    .profile-comment {
+        background: #222831;
+        box-shadow: none;
+    }
+
+    .profile-comment__content span {
+        color: #ffffffd3 !important;
+    }
+
+    .space-card {
+        border-radius: 4px;
+        background: #393e46;
+        box-shadow: none;
+    }
+
+    .sidebar__block .block-content>.nav-link .space__name,
+    .standard-layout .form-wrapper .form-content .form-section__header a.block-toggle,
+    .form-item-status .form-item-heading,
+    .form-item-status .form-item-item {
+        color: #fff !important;
+    }
+
+    .member-card .user__name {
+        color: #b9c6d4;
+    }
+
+    .view-manage-members .standard-layout .main__header,
+    .view-post .standard-layout .main__header,
+    .view-profile .standard-layout .main__header,
+    .view-space .standard-layout .main__header,
+    .view-api .standard-layout .main__header,
+    .view-invitation-links .standard-layout .main__header,
+    .view-manage-links .standard-layout .main__header,
+    .view-moderation .standard-layout .main__header,
+    .space__gated,
+    .table-wrapper,
+    .member-card__inside,
+    .post--card,
+    .member__gated {
+        background: #222831;
+        color: #fff;
+        box-shadow: none;
+    }
+
+    .member-card__inside>a {
+        background: #393e46;
+    }
+
+    .trix-v2 .post__reply .react-trix-editor-container .comment-box__bar.expanded {
+        background: #393e46;
+        border-color: #ffffff73;
+    }
+
+    .post__content,
+    .post__reply.reply-to-post {
+        background: #222831;
+        box-shadow: none;
+    }
+
+    .post__bio .author__credentials,
+    .view-plans .standard-layout .form-wrapper .form-content .pricing-table-description,
+    .settings-table__notifications-comments-mentions-likes .settings-table__row .cell--label {
+        color: #ffffffb3;
+    }
+
+    .post {
+        box-shadow: none;
+    }
+
+    .post .post__expand,
+    .member-card .user__tagline,
+    .member-card .user__location {
+        color: #ffffffb3;
+    }
+
+    .sidebar__onboarding-steps .block__inside {
+        background: #222831;
+        box-shadow: none;
+    }
+
+    .sidebar--right h2 a,
+    .block-header__title {
+        color: #fff;
+    }
+
+    .sidebar__members ul li .user>a {
+        color: #fff !important;
+    }
+
+    .sidebar__block a:hover {
+        color: #fff;
+    }
+
+    .sidebar__block .block-content>.nav-link:first-child {
+        color: #ffffffd4;
+    }
+
+    .sidebar__block .block-content>.nav-link:first-child:hover {
+        color: #fff;
+    }
+
+    .sidebar__block .block-content>.nav-link:hover .icon use {
+        fill: #00adb5 !important;
+    }
+
+    .sidebar__block .nav-link--inactive {
+        color: #ffffffd4 !important;
+    }
+
+    .standard-layout.has-sidebar .form-wrapper .form-content {
+        background: #222831;
+        box-shadow: none;
+    }
+
+    .standard-layout .form-wrapper .form-content h1,
+    .head_snippet_code {
+        color: #fff;
+    }
+
+    .standard-layout .form-wrapper .form-content .subtitle,
+    .standard-layout .form-wrapper .form-content .form-group .field-description {
+        color: #ffffffd4;
+    }
+
+    .form-meta label {
+        color: #fff !important;
+    }
+
+    .standard-layout .form-wrapper .form-content .form-section .form-group__hidden {
+        background: #222831;
+    }
+
+    .table_row:hover {
+        background: #222831;
+    }
+
+    .view-chat-room .community__content,
+    .view-chat-room,
+    .chat-room__chat-list,
+    .chat-room__row,
+    .chat-room__header,
+    .chat-room__messages,
+    .chat-room__grid {
+        background: #222831 !important;
+    }
+
+    .chat-room__link {
+        background: #393e46 !important;
+    }
+
+    .user-search__input {
+        background: #222831;
+        color: #fff;
+    }
+
+    .chat-room__grid--new,
+    .post__engagement {
+        background: #393e46;
+        box-shadow: none;
+    }
+
+    .trix-v2 .react-trix-editor-container trix-editor,
+    .trix-v2 .trix-content {
+        color: #393E46;
+    }
+
+    .standard-layout .form-wrapper .form-content .btn:not(.btn-post-reply) {
+        color: #fff;
+    }
+
+    .block-header>a[href="/s/content-creation"]:after {
+        content: "Course";
+        position: relative;
+        background: #00adb5;
+        padding: 3px 4px;
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        color: #FFF;
+        border-radius: 3px;
+        margin-left: 6px;
+        margin-top: 4px;
+ 
+    }
+
+    .welcome-banner__content-wrapper {
+        background: #393e46;
+    }
+
+    .view-homepage .post.post-name--empty .post__post .post__body,
+    .post__content,
+    .post__reply.reply-to-post,
+    .view-homepage .post__header,
+    .post__actions,
+    .view-homepage .sidebar--right .sidebar__block,
+    .view-homepage .sidebar--right .sidebar__block div,
+    .view-space .standard-layout .main__header {
+        background: #393e46
+    }
+
+    .bottom-bar__inside {
+        background: #222831;
+    }
+
+    .post__actions a.liked .icon use,
+    .post__actions a.liked:hover .icon use {
+        fill: #00adb5 !important;
+    }
+
+    .trix-v2 .react-trix-editor-container trix-editor,
+    .trix-v2 .trix-content,
+    .header__search--mobile .dropdown-menu,
+    .notifications__menu .notifications__list,
+    .notifications__header,
+    .notifications__footer,
+    .post__header.post-meta--hidden,
+    .post__post {
+        color: #fff;
+        background: #393e46;
+    }
+
+    .notifications__footer a {
+        color: #fff;
+    }
+
+    .post .post__share .action-link,
+    .post .post__share .action-link:hover {
+        color: #fff;
+    }
+
+    .ss-main .ss-multi-selected {
+        background: #393e46;
+        color: #fff;
+    }
+
+    .ss-main .ss-multi-selected *,
+    .dropdown-menu ul li a,
+    .dropdown-menu ul li a:hover {
+        color: #fff;
+    }
+
+    .post__inside.trix-v2 {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div[align="left"] {
+        margin-top: -37px;
+    }
+
+    .view-post .post__cover,
+    .post__reply.reply-to-post,
+    .post__comments {
+        border: 0;
+    }
+
+    .header__search .search-results__body,
+    .search-results__type span,
+    .center-layout .center-container .checkbox-line,
+    .center-layout .center-container .bottom-callout.mt-8 {
+        color: #ffffffd3;
+    }
+
+    .sidebar--right .block__inside ul li .post__avatar>.user--online:after {
+        border: none !important;
+    }
+
+    .analytics__box {
+        background: #393e46 !important;
+    }
+
+    .analytics__box a,
+    .analytics__box div,
+    .analytics__box span,
+    .analytics__box .box__list .list__item a {
+        color: #fff !important;
+    }
+
+    .highcharts-background {
+        fill: #222831;
+    }
+
+    .highcharts-legend-item>text,
+    .highcharts-legend-navigation {
+        fill: #fff !important;
+    }
+
+    .simple-toggle input:checked+label {
+        background-color: #00939a;
+    }
+
+    .post .post__pin .icon {
+        display: none;
+    }
+
+    .analytics__table__header.five-columns,
+    .analytics__table__item.five-columns,
+    .analytics__table__header.three-columns,
+    .analytics__table__item.three-columns,
+    .analytics__box div,
+    .post--comment.just-added>div>.post__content,
+    .post--comment.just-added>div>.post__content .post__user {
+        background: #393e46 !important;
+    }
+
+    .notifications__details,
+    .notifications__row--unread {
+        background: #393e46 !important;
+    }
+
+    .notifications__details,
+    .notifications__details a,
+    .notifications__details span {
+        color: #fff;
+    }
+
+    @media (min-width: 1200px) {
+        .header__inside {
+            grid-template-columns: 277px 1fr 250px !important;
+            grid-column-gap: 5px;
+        }
+
+    .toggle_btn {
+        display: inline-block;
+        padding: 6px 23px;
+        background: #00adb5;
+        padding: 3px 18px;
+        color: #fff !important;
+    }
+
+    .toggle_btn.completed-btn {
+        color: #fff !important;
+        background: #222831;
+    }
+
+    .minset-course .post--card__actions .action__icon svg.icon-like {
+        display: none;
+    }
+
+    .minset-course .post--card__actions .action-like .count {
+        display: inline-block;
+        padding: 6px 23px;
+        padding: 3px 18px;
+        color: #fff !important;
+        width: 145px;
+        text-content: center;
+    }
+
+    .minset-course .post--card__actions .post__actions--like.liked .count {
+        background: #00adb5;
+    }
+
+    .minset-course .post--card__actions .post__actions--like .count {
+        background: #222831;
+        position: relative;
+    }
+
+    .minset-course .post--card__actions .post__actions--like .count::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        left: 0;
+        top: 0;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .minset-course .post--card__actions .post__actions--like.liked .count::before {
+        background: #222831;
+        content: "Completed";
+    }
+
+    .minset-course .post--card__actions .post__actions--like .count::before {
+        content: "Mark As Complete";
+        background: #00adb5;
+
+    }
+
+    .minset-course .post__full .post__actions .post__actions--like .action__icon {
+        display: none;
+    }
+
+    .minset-course .post__full .post__comments .action__icon {
+        display: inline-block !important;
+    }
+
+    .minset-course .post__full .post__actions .post__actions--like .action__label:not(.minset-course .post__full .post__comments .action__label) {
+        width: 140px;
+        height: 40px;
+        position: relative;
+    }
+
+    .minset-course .post__full .post__comments .action__label::before {
+        display: none !important;
+
+    }
+
+
+    .minset-course .post__full .post__actions .post__actions--like .action__label::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 13px;
+        left: 0;
+        top: 0;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+    }
+
+    .minset-course .post__full .post__actions .post__actions--like.liked .action__label::before {
+        background: #222831;
+        content: "Completed";
+    }
+
+    .minset-course .post__full .post__actions .post__actions--like .action__label::before {
+        content: "Mark As Complete";
+        background: #00adb5;
+    }
+
+    .manage-members__search input {
+        background: #393e46;
+    }
+
+    .post--comment .post__actions .post__actions--like-count {
+        color: #fff;
+    }
+
+    .post__comments div {
+        background: #393e46 !important;
+    }
+
+    .post__full span.count {
+        display: one !important;
+    }
+
+    .engagement__members--descriptor span,
+    .author__credentials,
+    .post__bio .author__time a {
+        color: #ffffffd3 !important;
+    }
+
+    .user-menu .dropdown-menu__header,
+    .dropdown-menu__footer,
+    .header__search .search-results--desktop {
+        border: none !important;
+    }
+
+    .trix-v1 .trix-content div {
+        color: #fff !important
+    }
+
+    .view-profile .member__bio {
+        display: none;
+    }
+
+    .user__initials,
+    .post__user .user__avatar {
+        background-color: transparent !important;
+    }
+
+    .member-card .user--online:after {
+        border: none !important;
+    }
+
+    @media(max-width: 550px) {
+        .custom_dropdown {
+            left: -60%;
+        }
+
+        .minset-course .post__full .post__actions .post__actions--like .action__label {
+            width: 110px !important;
+            height: 40px !important;
+        }
+
+        .minset-course .post__full .post__actions .post__actions--like .action__label::before {
+            font-size: 11px !important;
+        }
+        .post__actions a:last-child{
+            font-size: 12px;
+        }
+       
+       iframe{
+          width: 100% !important;
+       }
+
+        .trix-v2 .trix-content *, li {
+    color: #fff !important;
+}
+ 
+    .standard-layout.has-sidebar .form-wrapper .form-content trix-editor,
+    .trix-v1 .trix-content .trix-dialog{
+        background: #393e46;
+        color: #fff;
+        border: none;
+        overflow: auto;
+    }
+      .trix-v1 trix-toolbar .trix-button:not(:disabled) {
+       color: #fff;
+     }
+     .header-comunity-link{
+      font-size: 12px;}
+    }
+   
+   .minset-course .post__full .post__actions .icon use{
+       fill: #ffffffd3 !important; 
+    }
+
+    .community__content--no-sidebar {
+        background: #222831 !important;
+    }
+
+    .browser-notification {
+        background: #393e46;
+    }
+
+    .browser-notification p,
+    .browser-notification a {
+        color: #ffffffd3;
+    }
+
+    .browser-notification strong {
+        color: #ffffffd3 !important;
+    }
+
+    .chat-room__scroll span,
+    .chat-room__header a,
+    .chat-room__profile .profile__name {
+        color: #fff;
+    }
+
+    .chat-room__grid * {
+        border-color: #8e8686;
+    }
+
+    .profile__avatar--online:after,
+    .chat-room__avatar--online:after {
+        border: none !important;
+    }
+
+    p.subtitle,
+    .notification-error__description,
+    .notification-error .center-container .text-lg,
+    .chat-room__name span {
+        color: #fff !important;
+    }
+
+    textarea::placeholder {
+        color: #ffffffd3;
+    }
+   .chat-room__messages {
+        overflow: auto;
+   }
+   .profile__view .btn-message{
+       background: #00adb5;
+       color: #fff;
+   }
+   .start_here .post--card__body.post-meta--hidden, .start_here .post--card__actions{
+       display: none;
+   }
+   .start_here .post--card.has-engagement {
+       padding-bottom: 0;
+   }
+   a{
+       font-weight: 400;
+   }
+   .BeaconBody{
+       background: #393e46 !important;
+   }
+.post--parent {
+        background: #393E46;
+   }
+.post--list__content h2 a {
+    color: #fff !important;
+   }
+ a, .trix-content a{
+ color: #00adb5; !important
+ }
+ .form-label-prefix .form-left-prefix{
+    background: #393e46;
+    border-color: #393e46;
+  }
+  .trix-v2 .react-trix-editor-container .link-form input{
+    color: #222;
+  }
+  .trix-content a, .trix-content a *{
+     color: #00adb5;
+  }
+a.trending-posts__post-name {
+    color: white;
+  }
+  .quickpost-modal__footer {
+ background: #393e46 !important;
+  }
+  .quickpost-modal__title {
+  color: white !important;
+  }
+.quickpost-modal .modal__body .form-section__title-input input {
+font-size: 18px;
+padding: 8px;
+ }
+ #post_name, .space-filter__input{
+   width: 100%;
+ }
+ label[for="hide_meta_info"]{
+  color: #fff !important;
+}
+.notifications__loader{
+background: #222831 !important;
+}
+
+.member-tags--label {
+        border: none !important;
+        color: #fff !important; 
+        background: #00adb5 !important; 
+    }
+   label.member-tags--label {
+        border: none !important;
+        color: #fff !important; 
+        background: #00adb5 !important; 
+    }
+
+label.member-tags--label.founder_label{
+        background-color: transparent !important;
+        color: #00ADB5 !important;
+        font-weight: bold;
+        border: 2px solid #00ADB5 !important;
+}
+.user__footer{
+        background: #393e46;
+}
+.sm\:text-5xl, .pb-2{
+      color: #fff !important;
+}
+.space-card__title a {
+color: #fff;
+}
+.profile-comment__inside .trix-content {
+  background: transparent !important;
+}
+.btn-message {
+ background: #222831 !important;
+}
+.trix-v2 .trix-content a{
+  color: #00ADB5 !important;
+}
+.trix-v1 trix-toolbar button[title="Embed"]{
+  color: #222 !important;
+  border: none;
+}
+.member-card__listing.has-messaging-enabled .member-card__inside{
+background: #393e46;
+}
+header__inside.member{
+    grid-template-columns: 277px 1fr 175px !important;
+}
+.sidebar__block .more {
+ color: #fff;
+}
+.standard-layout .main__header .header__nav .nav-filters__search input {
+color: #222;
+}
+.post__comments .load-more .load-more__replies {
+background: transparent !important;
+}
+.trending-posts a.trending-posts__author-name {
+    color: #d1d5dc;
+}
+.post--parent {
+background: #222831;
+}
+.view-shared-post .gated-post {
+background: #393e46;
+}
+.chat-room__link {
+    background: #222831 !important;
+}
+.unsplash-tab__result--author, .unsplash-tab__result--author a, .modal__box .tab-list-item, .trix-v2 .tab-list-item{
+color: #fff !important;
+}
+.quickpost-modal__footer--actions{
+background: transparent;
+}
+.emoji-mart-anchors, .quickpost-modal__fullpage .modal__inner {
+background: #393e46;
+}
+.member-card .user--idle:after {
+    position: absolute;
+    top: 2px;
+    left: 70px;
+    content: " ";
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background: #f4ac2e;
+    border: 2px solid #fff;
+}
+.post__inside.trix-v2{
+display: block !important;
+}
+.text-right{
+ color: rgb(178 176 176) !important;
+}
+img.emoj{
+margin-top: -4px;
+margin-right: 2px;
+width: 18px;
+display: inline-block;
+}
+.chat-room__row--unread .chat-room__last-message-text {
+    color: #f7f9fb;
+}
+.trix-v2 .trix__dropdown .block-selector-item.active, .trix-v2 .trix__dropdown li, .trix__dropdown div{
+background: #222831;
+}
+.notifications__time {
+    color: #eff1f6;
+}
+.notifications__row:not(.notifications__row--unread):hover{
+background: #393e46;
+}
+.view-space .post:not(.is-pinned) .post__inside,
+.post .post__comments .post__inside {
+    text-overflow: auto;
+    display: block;
+    overflow: visible;
+}
+/* sidebar */
+.sidebar__block a { white-space: normal !important; }
+.sidebar__block span { white-space: normal !important; }
+
+/* main content */
+h1 .title-name { white-space: normal; margin-left: 8px; }
+h1 .title-emoji + .title-name { margin-left: 0; }
+}
+
+.ul--members li a, .ul--members li 
+button{
+color: #FFF !important;
+}
+</style>

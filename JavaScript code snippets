@@ -1,0 +1,198 @@
+let change_emojis = [
+    ["CM Team", "https://cdn2.iconfinder.com/data/icons/mental-health-soft-fill/60/Mental_Health-heart-brain-love-512.png"],
+    ["Challenge Winner", "https://cdn1.iconfinder.com/data/icons/sport-fitness-vol-2/512/z5-champion-award-cup-winner-512.png"],
+    ["MOTM", "https://i.imgur.com/X16jd1i.gif"],
+    ["Diamond", "https://cdn1.iconfinder.com/data/icons/unigrid-phantom-holidays/60/015_018_crown_corona_cesar_tsar_king_leader_gold_silver_jewelery-512.png"],
+    ["The Avenger", "https://cdn1.iconfinder.com/data/icons/unigrid-phantom-security-vol-2/60/013_082_shield_secure_security_guarantee_protection-512.png"],
+
+]
+change_emojis.forEach(emoji => {
+    let h_tags = document.querySelectorAll(".table_row h4")
+    h_tags.forEach(h => {
+        if (h.textContent.includes(emoji[0])) {
+            let newImg = document.createElement("img");
+            newImg.classList.add("emoj")
+            newImg.src = emoji[1]
+            let img = document.querySelector(".emoj")
+            if (!(h.contains(img))) {
+                h.insertBefore(newImg, h.childNodes[0])
+            }
+        }
+    });
+
+})
+
+setTimeout(() => {
+    change_emojis.forEach(emoji => {
+        let span_tags = document.querySelectorAll(".member-tags--icon");
+        span_tags.forEach(h => {
+            if (h.getAttribute("data-tippy-content").includes(emoji[0])) {
+                let newImg = document.createElement("img");
+                newImg.classList.add("emoj")
+                newImg.src = emoji[1]
+                h.insertBefore(newImg, h.childNodes[0])
+            }
+        });
+    })
+}, 2000);
+
+
+setInterval(changeLabel, 0);
+
+function changeLabel() {
+    let memberTag = document.querySelectorAll(".member-tags--label");
+    memberTag.forEach(member => {
+        if (member.textContent.includes("Founder")) {
+            member.classList.add("founder_label")
+        }
+    })
+}
+
+
+var header = document.querySelector(".header__community");
+
+var pageTitle = "Recent Posts";
+
+var list = [["Podcast", "https://www.creatormindset.co/"], ["Blogs", "#"], ["More", ""]]; //links will be add here.
+
+var dropdownBlockSrc = ["https://pro.creatormindset.co/", "https://www.creatormindset.co/contentcreators", "https://www.creatormindset.co/blog", "#"]  //dropdown block src for # is just Placeholder
+
+if (!(document.querySelectorAll(".header-comunity-link").length == 3)) {
+    for (let i = 0; i < list.length; i++) {
+        var navLink = document.createElement("a");
+        navLink.textContent = list[i][0];
+        var att = document.createAttribute("href");
+        att.value = list[i][1];
+        navLink.setAttributeNode(att);
+        navLink.classList.add("header-comunity-link");
+        if (i == list.length - 1) {
+            navLink.classList.add("more-link");
+            navLink.removeAttribute("href");
+        }
+        header.appendChild(navLink);
+    }
+}
+
+var moreLink = document.querySelector(".more-link");
+var div = document.createElement("div");
+div.classList.add("custom_dropdown");
+moreLink.appendChild(div)
+moreLink.addEventListener("click", () => {
+    div.classList.toggle("active");
+})
+
+var block = document.createElement("a");
+block.classList.add("block");
+block.setAttribute("href", dropdownBlockSrc[0]);
+div.appendChild(block);
+console.log(`${dropdownBlockSrc[0]}`);
+
+var h2 = document.createElement("h2");
+h2.textContent = "🔥 Coaching"
+h2.classList.add("dropdown_h2");
+block.appendChild(h2)
+
+var p = document.createElement("p");
+p.textContent = "Need 1 on 1 help? We got your back";
+p.classList.add("dropdown_p");
+block.appendChild(p)
+
+var block2 = document.createElement("a");
+block2.classList.add("block");
+block2.setAttribute("href", dropdownBlockSrc[1]);
+div.appendChild(block2)
+
+var h3 = document.createElement("h2");
+h3.textContent = "✌ Courses"
+h3.classList.add("dropdown_h2");
+block2.appendChild(h3)
+
+var p2 = document.createElement("p");
+p2.textContent = "Find tailored courses for your brand that will help you level up";
+p2.classList.add("dropdown_p");
+block2.appendChild(p2)
+
+
+var block3 = document.createElement("a");
+block3.classList.add("block");
+block3.setAttribute("href", dropdownBlockSrc[2]);
+div.appendChild(block3)
+
+var h4 = document.createElement("h2");
+h4.textContent = "🔨 Tools"
+h4.classList.add("dropdown_h2");
+block3.appendChild(h4)
+
+var p3 = document.createElement("p");
+p3.textContent = "Powerful tools at your disposal";
+p3.classList.add("dropdown_p");
+block3.appendChild(p3)
+
+
+var block4 = document.createElement("a");
+block4.classList.add("block");
+block4.setAttribute("href", dropdownBlockSrc[3]);
+div.appendChild(block4)
+
+var h5 = document.createElement("h2");
+h5.textContent = "🏆 Awards"
+h5.classList.add("dropdown_h2");
+block4.appendChild(h5)
+
+var p4 = document.createElement("p");
+p4.textContent = "A compilation of the member awards.";
+p4.classList.add("dropdown_p");
+block4.appendChild(p4)
+
+
+//script for search bar
+var searchBar = document.querySelector(".header .search-input-wrapper");
+var searchInput = document.querySelector(".header .header__search form input");
+var searchIcon = document.getElementById(".search-input-wrapper .icon use")
+searchBar.addEventListener("click", () => {
+    searchInput.classList.toggle("active");
+    searchInput.focus();
+})
+searchInput.addEventListener("focusout", () => {
+    searchInput.classList.remove("active");
+})
+
+//Repace like button with completed buttons
+if (window.location.href == "https://pro.creatormindset.co/c/mindset" || window.location.href.includes("https://pro.creatormindset.co/c/module") ||
+    window.location.href.includes("https://pro.creatormindset.co/c/making-money-online") ||
+    window.location.href.includes("https://pro.creatormindset.co/c/mindset")) {
+    document.querySelector("body").classList.add("minset-course")
+}
+
+//completed by page (add URl here)
+if (window.location.href.includes("https://pro.creatormindset.co/c/mindset") || window.location.href.includes("https://pro.creatormindset.co/c/module") ||
+    window.location.href.includes("https://pro.creatormindset.co/c/making-money-online")) {
+    setInterval(() => {
+        var rep = document.querySelector(`.minset-course .post__full .engagement__members--descriptor span`);
+        var res = rep.textContent.replace("Liked", "Completed");
+        rep.textContent = res;
+
+        var re = document.querySelector(`.minset-course .post__full span.count`);
+        var r = re.textContent.replace("Liked", "Completed");
+        re.textContent = r;
+    }, 5);
+}
+
+
+if (window.location.href.includes("sign_up")) {
+    document.querySelector(`label[for="name"]`).textContent = "Username";
+}
+
+if (window.location.href.includes("start-here")) {
+    document.querySelector(`body`).classList.add("start_here")
+}
+
+
+let headerAction = document.querySelectorAll(".header__actions a").length;
+if (headerAction == 5) {
+    document.querySelector(".header__inside").classList.add("member")
+}
+
+//Replace home page title
+var homeTitle = document.querySelector(".homepage__title").textContent = pageTitle;
+
